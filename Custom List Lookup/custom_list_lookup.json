@@ -1,0 +1,48 @@
+{
+    "create_time": "2023-06-13T18:54:32.050543+00:00",
+    "custom_function_id": "aa7df7b917c0e37a4cc6c1a03e14112773040934",
+    "description": "Given a Custom list, specified data path, and a customer list name. Determine if specified data path value(s) are present in custom list, return a list of true/false values if present, and the entire custom list rows where present.",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [],
+            "description": "This should be passed as formatted text matching a custom list name. Ex: \"Authentication Allow List\"",
+            "input_type": "list",
+            "name": "customListInput",
+            "placeholder": "ex: Allowed_IPs_List"
+        },
+        {
+            "contains_type": [],
+            "description": "This should be passed as formatted text matching a valid datapath or list of valid datapaths. Ex: ['artifact:*.cef.fileHashSha256']",
+            "input_type": "item",
+            "name": "inputDataPath",
+            "placeholder": "ex: artifact.*.cef.src_ip"
+        },
+        {
+            "contains_type": [],
+            "description": "This should be a valid COLUMN HEADER NAME in the custom list that you are referring to. The function will search this header for matching values as specified in 'inputDataPath'",
+            "input_type": "item",
+            "name": "customListHeader",
+            "placeholder": "ex: IP or matchingHash"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [],
+            "data_path": "foundInList",
+            "description": "List of Booleans"
+        },
+        {
+            "contains_type": [],
+            "data_path": "notFoundInList",
+            "description": "List of Booleans"
+        },
+        {
+            "contains_type": [],
+            "data_path": "returnedRows",
+            "description": "Dictionary of lists"
+        }
+    ],
+    "platform_version": "5.3.3.92213",
+    "python_version": "3"
+}
